@@ -2,6 +2,7 @@ goog.provide('app.simple');
 
 /** @suppress {extraRequire} */
 goog.require('ngeo.mapDirective');
+goog.require('ngeo.workshop');
 goog.require('ol.Map');
 goog.require('ol.View');
 goog.require('ol.layer.Tile');
