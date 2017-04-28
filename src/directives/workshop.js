@@ -2,32 +2,32 @@ goog.require('ngeo.filters');
 goog.require('ngeo.Popup');
 
 ngeo.workshopDirective = function() {
-	return {
-		templateUrl: `${ngeo.baseTemplateUrl}/workshop.html`,
-		controller: 'ngeoWorkshopController as ctrl',
-		scope: {
-			'map': '<'
-		},
-		bindToController: true
-	};
+  return {
+    templateUrl: `${ngeo.baseTemplateUrl}/workshop.html`,
+    controller: 'ngeoWorkshopController as ctrl',
+    scope: {
+      'map': '<'
+    },
+    bindToController: true
+  };
 };
 
 ngeo.workshopController = function(ngeoCreatePopup) {
-	this.coordinates = [
+  this.coordinates = [
 		[730556, 5863720],
 		[829500, 5933600],
 		[950000, 6002000]
-	];
+  ];
 
-	ngeo.workshopController.prototype.recenter = function(coordinate) {
-		const view = this.map.getView();
-		const popup = ngeoCreatePopup();
-		view.setCenter(coordinate);
-		view.setZoom(10);
-		popup.setTitle('Recenter');
-		popup.setContent(String(coordinate), true);
-		popup.setOpen(true);
-	};
+  ngeo.workshopController.prototype.recenter = function(coordinate) {
+    const view = this.map.getView();
+    const popup = ngeoCreatePopup();
+    view.setCenter(coordinate);
+    view.setZoom(10);
+    popup.setTitle('Recenter');
+    popup.setContent(String(coordinate), true);
+    popup.setOpen(true);
+  };
 };
 
 ngeo.module.directive('ngeoWorkshop', ngeo.workshopDirective);
