@@ -1,0 +1,11 @@
+<div ng-repeat="coordinate in ctrl.coordinates">
+	<a href="" ng-click="ctrl.recenter(coordinate)">
+		recenter to {{coordinate | ngeoNumberCoordinates:0:'{x} / {y}'}}
+	</a>
+</div>
+
+<div ng-repeat="message in ctrl.messages">
+	<ul>
+		<li>{{message}}</li>
+	</ul>
+</div>

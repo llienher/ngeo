@@ -103,6 +103,10 @@
               data-toggle="tooltip" data-placement="left" data-original-title="{{'Street View'|translate}}">
               <span class="fa fa-street-view"></span>
             </button>
+            <button class="btn btn-default" ngeo-btn ng-model="mainCtrl.workshopPanelActive"
+                    data-toggle="tooltip" data-placement="left" data-original-title="{{'Workshop'|translate}}">
+              <span class="fa fa-info"></span>
+            </button>
           </div>
           <br/>
           <br/>
@@ -219,6 +223,15 @@
                   feature-style="mainCtrl.googleStreetViewStyle"
                   map="mainCtrl.map">
               </ngeo-googlestreetview>
+            </div>
+          </div>
+          <div ng-show="mainCtrl.workshopPanelActive" class="row">
+            <div class="col-sm-12">
+              <div class="gmf-app-tools-content-heading">
+                {{'Workshop' | translate}}
+                <a class="btn close" ng-click="mainCtrl.workshopPanelActive = false">&times;</a>
+              </div>
+              <gmf-workshop map="mainCtrl.map"></gmf-workshop>
             </div>
           </div>
         </div>
