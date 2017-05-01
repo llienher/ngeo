@@ -12,7 +12,7 @@ gmf.workshopDirective = function() {
   };
 };
 
-gmf.workshopController = function(ngeoCreatePopup, $scope) {
+gmf.workshopController = function(ngeoCreatePopup, $scope, gmfUser) {
   this.coordinates = [
 		[730556, 5863720],
 		[829500, 5933600],
@@ -21,8 +21,9 @@ gmf.workshopController = function(ngeoCreatePopup, $scope) {
 
   this.messages = [];
 
+  //gmfUser.username ? this.isLogged = true : this.isLogged = false;
+
   $scope.$on('ngeo-layertree-state', (event, tree, parent) => {
-    //console.log(event, tree, parent);
     this.messages.push(tree);
     tree.setState(true);
   });
